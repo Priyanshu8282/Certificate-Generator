@@ -26,7 +26,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', formData);
+      const response = await axios.post('https://certificate-generator-g107.onrender.com/auth/login', formData);
       const { token } = response.data;
       localStorage.setItem('token', token);
       toast.success('Login successful');
