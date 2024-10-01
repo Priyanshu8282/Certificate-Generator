@@ -22,7 +22,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/register', formData);
+      const response = await axios.post('https://certificate-generator-g107.onrender.com/auth/register', formData);
       const { token } = response.data;
       localStorage.setItem('token', token);
       toast.success('User registered successfully');
