@@ -67,7 +67,7 @@ function Login() {
             </label>
         
             <button type="submit" className="login-button">Login</button>
-            <p>Don't have an account? <a href="/register">Sign Up</a></p>
+            <p>Don't have an account? <a href="https://certificate-generator-frontend.onrender.com/register">Sign Up</a></p>
         </form>
     </div>
     </div>
