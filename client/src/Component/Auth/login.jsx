@@ -5,10 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
 
-
-
 function Login() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -31,45 +29,47 @@ function Login() {
       localStorage.setItem('token', token);
       toast.success('Login successful');
       navigate('/dashboard');
-    
     } catch (error) {
       toast.error(error.response.data.message || 'Login failed');
     }
   };
 
+  const handleSignUp = () => {
+    navigate('/register');
+  };
+
   return (
     <div className="auth-container">
-    <div className="login-container"> 
+      <div className="login-container">
         <ToastContainer />
-        <h1 className="login-title"> Login </h1>
+        <h1 className="login-title">Login</h1>
         <form className="login-form" onSubmit={handleLogin}>
-            <label className="login-label">
-                Email:
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter the email"
-                  className="login-input"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-            </label>
-            <label className="login-label">
-                Password:
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  className="login-input"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
-            </label>
-        
-            <button type="submit" className="login-button">Login</button>
-            <p>Don't have an account? <a href="https://certificate-generator-frontend.onrender.com/register">Sign Up</a></p>
+          <label className="login-label">
+            Email:
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter the email"
+              className="login-input"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="login-label">
+            Password:
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="login-input"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </label>
+          <button type="submit" className="login-button">Login</button>
+          <p>Don't have an account? <button type="button" className="signup-button" onClick={handleSignUp}>Sign Up</button></p>
         </form>
-    </div>
+      </div>
     </div>
   );
 }
