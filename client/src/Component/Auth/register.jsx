@@ -75,7 +75,7 @@ function Register() {
             </label>
         
             <button type="submit" className="register-button">Sign Up</button>
-            <p>Already have an account? <a href="/">Log in now</a></p>
+            <p>Already have an account? <a href="https://certificate-generator-frontend.onrender.com">Log in now</a></p>
         </form>
     </div>
     </div>
