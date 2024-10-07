@@ -75,3 +75,12 @@
   .login-form a:hover {
     text-decoration: underline;
   }
+ .signup-link{
+    color: #00796b;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .signup-link  p:hover {
+    text-decoration: underline;
+  }
