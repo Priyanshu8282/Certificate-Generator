@@ -67,7 +67,7 @@ function Login() {
             />
           </label>
           <button type="submit" className="login-button">Login</button>
-          <p>Don't have an account? <button type="button" className="signup-button" onClick={handleSignUp}>Sign Up</button></p>
+           <p>Don't have an account? <span onClick={handleSignUp} className="signup-link">Sign Up</span></p>
         </form>
       </div>
     </div>
