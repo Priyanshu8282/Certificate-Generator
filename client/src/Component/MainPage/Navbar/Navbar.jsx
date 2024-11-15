@@ -22,13 +22,8 @@ const Header = ({ exportRef }) => {
     document.body.classList.toggle('dark-theme');
   };
 
-  // Handle Logout
-  const handleLogout = () => {
-    localStorage.removeItem('token'); // Remove the token from local storage
-    toast.success('Logout successful');
-    navigate('/'); // Redirect to the login page
-  };
-
+ 
+ 
   // Toggle Popup
   const handlePopupToggle = () => {
     setPopupOpen(!popupOpen);
@@ -130,7 +125,6 @@ const Header = ({ exportRef }) => {
             </div>
           )}
         </div>
-        <button className="header-btn" onClick={handleLogout}>Logout</button>
         <button className="header-btn theme-toggle" onClick={handleThemeToggle}>
           {darkMode ? '🌙' : '☀️'}
         </button>
@@ -148,7 +142,6 @@ const Header = ({ exportRef }) => {
               <button className="dropdown-item" onClick={() => handleExport('zip')}>ZIP</button>
             </div>
           )}
-          <button className="popup-btn" onClick={handleLogout}>Logout</button>
           <button className="popup-btn theme-toggle" onClick={handleThemeToggle}>
             {darkMode ? '🌙' : '☀️'}
           </button>

@@ -7,7 +7,6 @@ import path from "path";
 import { fileURLToPath } from 'url';
 import csv from "csv-parser";
 import connectDb from "./config/db.js";
-import AuthRoute from "./routes/AuthRoute.js";
 import upload from "./config/multer.js";
 import Certificate from "./models/CertificateModel.js";
 import CertificateRoute from "./routes/CertificateRoute.js";
@@ -23,7 +22,6 @@ app.use(cors());
 app.use(express.json());
 connectDb();
 
-app.use("/auth", AuthRoute);
 app.use("/certificates", CertificateRoute);
 
 // Route to handle CSV file upload

@@ -215,15 +215,15 @@ body.dark-theme .popup .theme-toggle:hover {
 
   .popup {
     position: fixed;
-    top: 0;
+    top: 20px;
     right: 0;
-    width: 250px;
-    height: 100vh;
+    width: 150px;
+    height: 10vh;
     background-color: #f8f9fa;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 1000;
     overflow-y: auto;
+    gap: 10px;
   }
 
   .cross {
@@ -232,7 +232,7 @@ body.dark-theme .popup .theme-toggle:hover {
     font-size: 24px;
     cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 10px;
   }
 
@@ -240,7 +240,7 @@ body.dark-theme .popup .theme-toggle:hover {
     display: block;
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin: 9px 0;
     background-color: #e2e6ea;
     border: none;
     border-radius: 4px;
