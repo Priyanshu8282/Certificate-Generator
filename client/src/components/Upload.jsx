@@ -17,7 +17,7 @@ const Upload = ({ setUploadedData }) => {
     formData.append('csvFile', file);
 
     try {
-      const res = await axios.post('http://localhost:5000/upload', formData, {
+      const res = await axios.post('https://certificate-generator-g107.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
