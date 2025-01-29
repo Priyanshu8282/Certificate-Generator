@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 const Upload = ({ setUploadedData }) => {
   const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const fileInputRef = useRef(null);
 
   const handleFileChange = (e) => {
@@ -13,6 +14,7 @@ const Upload = ({ setUploadedData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData();
     formData.append('csvFile', file);
 
@@ -32,6 +34,8 @@ const Upload = ({ setUploadedData }) => {
       } else {
         toast.error('An error occurred while uploading the file.');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -83,8 +87,32 @@ const Upload = ({ setUploadedData }) => {
             className="w-full py-3 px-6 bg-[#1D4ED8] text-white font-semibold rounded-lg hover:bg-[#3B82F6] focus:ring-4 focus:ring-[#93C5FD] transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            disabled={loading}
           >
-            Upload
+            {loading ? (
+              <svg
+                className="animate-spin h-5 w-5 text-white mx-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                ></path>
+              </svg>
+            ) : (
+              'Upload'
+            )}
           </motion.button>
         </form>
       </motion.div>
